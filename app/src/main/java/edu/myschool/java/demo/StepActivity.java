@@ -23,13 +23,13 @@ public class StepActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step);
-
         mySensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         myStepDetect = mySensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
         myStepCounter = mySensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         textTitle = (TextView) findViewById(R.id.textTitle);
         textTitle.setText("Steps");
         textContent = (TextView) findViewById(R.id.textContent);
+        textContent.setText("0");
         imageDot = (ImageView) findViewById(R.id.imgStep);
         imageDot.setVisibility(View.INVISIBLE);
     }
