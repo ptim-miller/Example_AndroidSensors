@@ -1,2 +1,2 @@
 # Example AndroidSensors
-## Intro students to Sensors & Permissions
+## Intro to Sensors & Permissions
