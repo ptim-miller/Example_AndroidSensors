@@ -2,6 +2,7 @@ package edu.myschool.java.demo;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
@@ -41,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
             listPermissions.add(Manifest.permission.ACTIVITY_RECOGNITION);
         }
 
-        // Not needed until we use ut - just an example
-        int body = ContextCompat.checkSelfPermission(this, Manifest.permission.BODY_SENSORS);
+        // Not needed  - (example of requesting non-pertinent permission)
+        int body = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
         if (body != PackageManager.PERMISSION_GRANTED) {
-            listPermissions.add(Manifest.permission.BODY_SENSORS);
+            listPermissions.add(Manifest.permission.CAMERA);
         }
         if (!listPermissions.isEmpty())
         {
@@ -91,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), StepActivity.class));
             }
         });
+
+//        if (isV10orUp && activity != PackageManager.PERMISSION_GRANTED) {
+//            listPermissions.add(Manifest.permission.ACTIVITY_RECOGNITION);
+//        }
 
         textTitle = (TextView) findViewById(R.id.textTitle);
         textContent = (TextView) findViewById(R.id.textContent);

@@ -2,10 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.myschool.java.demo">
 
+    <!--    dangerous permission needed by app-->
     <uses-permission
         android:name="android.permission.ACTIVITY_RECOGNITION"
         android:required="true" />
-    <uses-permission android:name="android.gms.permission.BODY_SENSORS"/>
+
+<!--    normal permission not really needed by app-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+<!--    dangerous permissions not really needed by app-->
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
 
     <application
         android:allowBackup="true"
