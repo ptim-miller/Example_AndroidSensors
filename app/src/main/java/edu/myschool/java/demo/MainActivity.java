@@ -1,32 +1,28 @@
 package edu.myschool.java.demo;
 
 import android.Manifest;
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-
 import java.util.ArrayList;
 import java.util.List;
 
 // Quick intro to sensors - needs a lot of work and testing
+// Split into different activities to separate functionality for students
 public class MainActivity extends AppCompatActivity {
     TextView textTitle=null;
     TextView textContent=null;
 
+    @SuppressLint("InlinedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), StepActivity.class));
             }
         });
-
 
         textTitle = (TextView) findViewById(R.id.textTitle);
         textContent = (TextView) findViewById(R.id.textContent);

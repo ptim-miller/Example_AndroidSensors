@@ -56,17 +56,17 @@ public class MagActivity extends AppCompatActivity implements SensorEventListene
         }
         SensorManager.getRotationMatrix(myR, null, myLastAccelerometer, myLastMagnetometer);
         SensorManager.getOrientation(myR, myOrientation);
-        float azimuthInRadians = myOrientation[0];
-        float azimuthInDegress = (float)(Math.toDegrees(azimuthInRadians) + 360) % 360;
+        float azimuthInRads = myOrientation[0];
+        float azimuthInDeg = (float)(Math.toDegrees(azimuthInRads) + 360) % 360;
 
         RotateAnimation animationRot = new RotateAnimation(
-                myDegrees,azimuthInDegress * -1, Animation.RELATIVE_TO_SELF, 0.5f,
+                myDegrees,azimuthInDeg * -1, Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f);
         animationRot.setDuration(200);
         animationRot.setFillAfter(true);
 
         imgArrow.startAnimation(animationRot);
-        myDegrees = azimuthInDegress * -1;
+        myDegrees = azimuthInDeg * -1;
     }
 
     @Override

@@ -11,6 +11,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+// review available Google APIs
+// https://developers.google.com/fit/android/
+// https://developers.google.com/fit/android/sensors
+// https://developers.google.com/android/reference/com/google/android/gms/fitness/SensorsApi
+//
 public class StepActivity extends AppCompatActivity implements SensorEventListener {
     private SensorManager mySensorManager;
     private Sensor myStepDetect;
