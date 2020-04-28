@@ -48,7 +48,7 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
     }
     @Override
     public void onSensorChanged(SensorEvent event) {
-        float threshold  = 20.0f;
+        float threshold  = 15.0f;
         textContent.setText("");
         for(float item: event.values){
             textContent.append(item + "\n");

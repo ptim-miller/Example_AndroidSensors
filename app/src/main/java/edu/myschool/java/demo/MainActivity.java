@@ -28,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         SensorManager mySensorManager;
         Sensor sensor;
+
         int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
         List<String> listPermissions = new ArrayList<>();
         int activity = 0;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         if (body != PackageManager.PERMISSION_GRANTED) {
             listPermissions.add(Manifest.permission.CAMERA);
         }
+
         if (!listPermissions.isEmpty())
         {
             ActivityCompat.requestPermissions(this,listPermissions.toArray
@@ -92,10 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), StepActivity.class));
             }
         });
-
-//        if (isV10orUp && activity != PackageManager.PERMISSION_GRANTED) {
-//            listPermissions.add(Manifest.permission.ACTIVITY_RECOGNITION);
-//        }
 
         textTitle = (TextView) findViewById(R.id.textTitle);
         textContent = (TextView) findViewById(R.id.textContent);
